@@ -13,9 +13,9 @@ ENV PATH=$PATH:$GOROOT/bin
 RUN curl -Ls https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz | tar -xzC "$APPDIR/"
 
 # Create a copy of the repository inside the container.
-RUN mkdir -p "$GOPATH/src" && \
+RUN mkdir -p "$GOPATH" && \
     cd $GOPATH
-ENV GOPROJ="$GOPATH/src/github.com/iftsoft/device"
+ENV GOPROJ="$GOPATH/devstore"
 COPY ./. $GOPROJ/.
 
 # Build all projects

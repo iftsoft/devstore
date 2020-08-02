@@ -17,6 +17,6 @@ function cleanup() {
 }
 trap cleanup EXIT
 
-docker cp $container:/gopath/src/github.com/iftsoft/device/build/. build/
+docker cp $container:/gopath/devstore/build/. build/
 
 popd > /dev/null

@@ -2,7 +2,7 @@
 
 # get current version
 version=$(cat version.txt)
-dir_name="Device_Package"
+dir_name="Device_Storage"
 
 echo "Packaging executable and configs for Linux"
 mkdir -p $dir_name
@@ -11,8 +11,9 @@ cp version.txt $dir_name/version.txt
 mkdir -p $dir_name/binary
 cp build/linux/client $dir_name/binary/client
 cp build/linux/server $dir_name/binary/server
+cp build/linux/cashvalidator $dir_name/binary/cashvalidator
 # package scripts
-cp -R install/config/ $dir_name/config/
+#cp -R install/config/ $dir_name/config/
 # create archive
 tar cfz "build/${dir_name}_linux_${version}.tar.gz" $dir_name/
 rm -rf $dir_name/
@@ -24,8 +25,9 @@ cp version.txt $dir_name/version.txt
 mkdir -p $dir_name/binary
 cp build/darwin/client $dir_name/binary/client
 cp build/darwin/server $dir_name/binary/server
+cp build/darwin/cashvalidator $dir_name/binary/cashvalidator
 # package scripts
-cp -R install/config/ $dir_name/config/
+#cp -R install/config/ $dir_name/config/
 # create archive
 tar cfz "build/${dir_name}_darwin_${version}.tar.gz" $dir_name/
 rm -rf $dir_name/
@@ -37,8 +39,9 @@ cp version.txt $dir_name/version.txt
 mkdir -p $dir_name/binary
 cp build/windows/client.exe $dir_name/binary/client.exe
 cp build/windows/server.exe $dir_name/binary/server.exe
+cp build/windows/cashvalidator.exe $dir_name/binary/cashvalidator.exe
 # package scripts
-cp -R install/config/ $dir_name/config/
+#cp -R install/config/ $dir_name/config/
 # create archive
 zip -rq "build/${dir_name}_win64_${version}.zip" $dir_name/
 rm -rf $dir_name/

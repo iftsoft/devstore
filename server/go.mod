@@ -3,6 +3,7 @@ module server
 go 1.12
 
 require (
+	github.com/creack/goselect v0.1.1 // indirect
 	github.com/iftsoft/device v0.3.0
 	github.com/karalabe/hid v1.0.0 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect
